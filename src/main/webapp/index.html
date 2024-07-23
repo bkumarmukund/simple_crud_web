@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- htmx -->
+    <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+    <title>CRUD_</title>
+</head>
+
+<body>
+
+    <body>
+        <center>
+            <div style="display: inline;"><input required type="text" name="searchName" hx-get="db"
+                    hx-trigger="keyup[key=='Enter']" hx-target="#search-results"
+                    placeholder="Search...by name">
+            </div>
+            <div style="display: inline;"><input required type="text" name="searchEmail" hx-get="db"
+                    hx-trigger="keyup[key=='Enter']" hx-target="#search-results" placeholder="Search...by email">
+            </div>
+            <br>
+            <button style="margin-top: 20px;" hx-get="db" hx-trigger="click"
+            hx-target="#search-results">
+                loadAllData
+            </button>
+            
+            <div>
+                <button hx-get="db" class="btn primary"
+                hx-trigger="click"
+                hx-target="#search-results"
+                name="operation"
+                value="newEntry"
+            >
+                Add new Entry
+                </button>
+            </div>
+            <div style="margin-top: 30px;" id="search-results"></div>
+        </center>
+    </body>
+</body>
+
+</html>
